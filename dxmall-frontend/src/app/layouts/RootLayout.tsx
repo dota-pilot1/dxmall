@@ -12,9 +12,17 @@ export function RootLayout() {
     <div className="min-h-screen bg-gray-50">
       <nav className="bg-white border-b border-gray-200">
         <div className="px-6 h-14 flex items-center justify-between">
-          <Link to="/" className="text-lg font-bold text-gray-900">
-            DXMall
-          </Link>
+          <div className="flex items-center gap-6">
+            <Link to="/" className="text-lg font-bold text-gray-900">
+              DXMall
+            </Link>
+            <Link
+              to="/products"
+              className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              상품
+            </Link>
+          </div>
           <div className="flex items-center gap-4">
             {token ? (
               <>

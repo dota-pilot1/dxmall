@@ -31,6 +31,10 @@ public class SecurityConfig {
                 auth
                     .requestMatchers("/api/auth/**")
                     .permitAll()
+                    .requestMatchers("/api/products/**")
+                    .permitAll()
+                    .requestMatchers("/api/admin/**")
+                    .hasRole("ADMIN")
                     .requestMatchers("/actuator/**")
                     .permitAll()
                     .requestMatchers("/swagger-ui/**", "/v3/api-docs/**")
