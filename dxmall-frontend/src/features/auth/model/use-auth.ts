@@ -8,6 +8,7 @@ import {
 
 interface AuthResponse {
   token: string;
+  name: string;
 }
 
 interface LoginRequest {
@@ -34,7 +35,7 @@ export function useAuth() {
         method: "POST",
         body: JSON.stringify(data),
       });
-      setSession(res.token, data.email);
+      setSession(res.token, res.name);
       navigate("/");
     } catch (e) {
       if (e instanceof ApiClientError) {
@@ -55,7 +56,7 @@ export function useAuth() {
         method: "POST",
         body: JSON.stringify(data),
       });
-      setSession(res.token, data.name);
+      setSession(res.token, res.name);
       navigate("/");
     } catch (e) {
       if (e instanceof ApiClientError) {
